@@ -13,3 +13,8 @@
 **New component**: ```ng g c componentName```
 <br>
 **Run project**: ```ng serve```
+
+### TypeScript
+** Superset ** of JavaScript. 
+** Transpile ** to JS
+** Static type**
