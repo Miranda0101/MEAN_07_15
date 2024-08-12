@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'inclass';
+  messageString =  "Welcome to Angular"
   constructor(private route: Router){}
   navigateProduct(){
     // do validation logic

@@ -1,0 +1,20 @@
+<p>day1-databinding works!</p>
+<h1>String Interpolation == > {{welcomeMsg}}</h1>
+
+<!-- <input placeholder="hello JR, please write your hobby"/> -->
+<input [placeholder]="placeholderMsg"/>
+<!-- <input placeholder="placeholderMsg"/> -->
+
+<button (click)="handleClick()">Click Me to pop up window</button>
+<br>
+<br>
+<br>
+<br>
+<input [(ngModel)] = "defaultMsg"/>
+<button (click)="resetMsg()">Click to reset the message</button>
+<h3>{{defaultMsg}}</h3>
+
+
+<br>
+<br>
+<input [formControl] = "usernameFormControl" (keyup)="handleChange()"/>
