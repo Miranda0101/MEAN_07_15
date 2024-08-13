@@ -1,0 +1,53 @@
+<h1>Welcome to the Day2 class</h1>
+<button>Start learning</button>
+<ul>
+  <!-- <li *ngIf="isShow">structual directive</li>
+
+  @if(isShow){
+    <li>structual directive</li>
+  }
+
+  <div *ngFor="let item of arr">
+    <button>{{ item.name }}</button>
+  </div> -->
+
+
+  @for(item of arr; track item){
+    <div>
+      <button>{{ item.name }}</button>
+    </div>
+  }
+
+  <button (click)="changeDataSource()">click me to update array</button>
+
+  <!-- <div [ngSwitch]="subject">
+    <div *ngSwitchCase="'Math'">Student choose Math</div>
+    <div *ngSwitchCase="'English'">Student choose English</div>
+    <div *ngSwitchCase="'Spanish'">Student choose Spanish</div>
+    <div *ngSwitchDefault>Student choose Nothing</div>
+  </div>
+
+  @switch (subject){
+     @case ("Math"){
+      <div>Student choose Math</div>
+     }
+     @case("English"){
+      <div>Student choose English</div>
+
+     }
+     @default {
+      <div >Student choose Nothing</div>
+     }
+
+  } -->
+
+
+
+  <!-- <p>Angular v17 : new annotators for structual directive</p> -->
+  <!-- <p> *ngIf ===> @if(){} @else(){}</p> -->
+   <!-- <p> *ngFor ===> @for {}  @empty</p> -->
+   <!-- <p> *ngSwith ===> @switch @case </p> -->
+
+
+  <!-- <li>attribute directive</li> -->
+</ul>
