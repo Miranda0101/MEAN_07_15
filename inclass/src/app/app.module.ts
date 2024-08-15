@@ -10,7 +10,10 @@ import { ProductComponent } from './product/product.component';
 import { Day1DatabindingComponent } from './classNote/day1-databinding/day1-databinding.component';
 import { CommonModule } from '@angular/common';
 import { Day2Component } from './classNote/day2-directives-pipes/day2.component';
-
+import { Day3DataCommuteComponent } from './classNote/day3-data-commute/day3-data-commute.component';
+import { Day3ChildComponent } from './classNote/day3-data-commute/day3-child/day3-child.component';
+import { Day3SiblingComponent } from './classNote/day3-data-commute/day3-sibling/day3-sibling.component';
+import { Day3Service } from './classNote/day3-data-commute/day3.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,9 @@ import { Day2Component } from './classNote/day2-directives-pipes/day2.component'
     ProductComponent,
     Day1DatabindingComponent,
     Day2Component,
+    Day3DataCommuteComponent,
+    Day3ChildComponent,
+    Day3SiblingComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,9 @@ import { Day2Component } from './classNote/day2-directives-pipes/day2.component'
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [],
+  // providers: [Day3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//create instance of service in app.module
