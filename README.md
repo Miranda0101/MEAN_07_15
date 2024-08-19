@@ -18,3 +18,8 @@
 ** Superset ** of JavaScript. 
 ** Transpile ** to JS
 ** Static type**
+
+## Service
+- Reusable piece of code with a specific purpose such as handling the data
+- Singleton
+- Dependency Injection(DI)

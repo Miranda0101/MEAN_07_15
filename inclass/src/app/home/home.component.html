@@ -1,1 +1,12 @@
-<p>home works!</p>
+<table *ngIf="products.length">
+    <th>
+        Product
+    </th>
+    <th>Quantity</th>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+        </tr>
+    </tbody>
+</table>
