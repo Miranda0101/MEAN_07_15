@@ -7,18 +7,20 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { LifecycleComponent } from './home/lifecycle/lifecycle.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductComponent,
-    LifecycleComponent
+    LifecycleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

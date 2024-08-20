@@ -23,3 +23,13 @@
 - Reusable piece of code with a specific purpose such as handling the data
 - Singleton
 - Dependency Injection(DI)
+
+## HttpClient
+- service, exists in HttpClientModule
+- contains Http methods like GET, POST, PUT, DELETE...
+## Observables VS Promise
+- Stream of data; Single value
+- Lazy ; Eager
+- Can be stopped by unsubscribing; cannot stop
+- Operators
+- Observer(Followers) subscribes to Observerble(Youtube Channel) / Subscription
