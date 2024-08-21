@@ -15,9 +15,9 @@
 **Run project**: ```ng serve```
 
 ### TypeScript
-** Superset ** of JavaScript. 
-** Transpile ** to JS
-** Static type**
+- **Superset** of JavaScript. 
+- **Transpile** to JS
+- **Static type**
 
 ## Service
 - Reusable piece of code with a specific purpose such as handling the data
@@ -33,3 +33,7 @@
 - Can be stopped by unsubscribing; cannot stop
 - Operators
 - Observer(Followers) subscribes to Observerble(Youtube Channel) / Subscription
+
+## Forms
+- Template-driven forms: logics stay in the template; using directives like ngModel, ngSubmit
+- Model-driven Forms / Reactive forms: FormControl, FormGroup, FormArray; FormBuilder

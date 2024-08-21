@@ -1,0 +1,31 @@
+<form [formGroup]="messageForm">
+  <label>Username:</label>
+  <input [formControl]="username" />
+  <p *ngIf="username.pristine">This field has not been modified yet.</p>
+  <p *ngIf="username.dirty && username.touched">
+    You have modified this field.
+  </p>
+
+  <label>Email: </label>
+  <input formControlName="email" />
+  <p *ngIf="messageForm.controls['email'].pristine">
+    The email field has not been modified yet.
+  </p>
+  <p *ngIf="emailControl?.untouched">
+    This email field has not been interacted with.
+  </p>
+  <p *ngIf="emailControl?.errors?.['required']">The email is required.</p>
+  <p *ngIf="emailControl?.errors?.['email']">Please provide a valid email address.</p>
+
+  <div formArrayName="topics">
+    <div *ngFor="let control of topicControl.controls; let i = index">
+      <input type="radio" formControlName="{{ i }}" />
+      {{ topicList[i].name }}
+    </div>
+  </div>
+
+  <label>Message: </label>
+  <textarea formControlName="message"></textarea>
+
+  <button type="submit" (click)="onSubmit()">Submit</button>
+</form>
