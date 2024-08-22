@@ -42,3 +42,7 @@
 - Multiple subscribers to the same instance
 - **BehaviorSubject**: Emit latest value
 - **ReplaySubject**: Save all the values and emit all of them when subscribed
+
+## Operators
+- Creation operators: of, from, fromEvent, interval, forkJoin
+- Pipeable Operators: pipe, tap, delay, debounceTime, thorttleTime, filter, take, takeUntil
