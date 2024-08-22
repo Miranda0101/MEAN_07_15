@@ -37,3 +37,8 @@
 ## Forms
 - Template-driven forms: logics stay in the template; using directives like ngModel, ngSubmit
 - Model-driven Forms / Reactive forms: FormControl, FormGroup, FormArray; FormBuilder
+
+## Subject
+- Multiple subscribers to the same instance
+- **BehaviorSubject**: Emit latest value
+- **ReplaySubject**: Save all the values and emit all of them when subscribed
