@@ -7,9 +7,9 @@ import { ProductService } from './product.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  // products: any[] = [];
+  products: any[] = [];
   constructor(private productService: ProductService){
-    // this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
   addNewProduct(){
     this.productService.addProduct({id:'4', name:'Shampoo', quantity:'40'})

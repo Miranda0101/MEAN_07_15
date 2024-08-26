@@ -43,6 +43,13 @@
 - **BehaviorSubject**: Emit latest value
 - **ReplaySubject**: Save all the values and emit all of them when subscribed
 
-## Operators
+## RxJS Operators
 - Creation operators: of, from, fromEvent, interval, forkJoin
-- Pipeable Operators: pipe, tap, delay, debounceTime, thorttleTime, filter, take, takeUntil
+- Pipeable Operators: pipe, tap, delay, debounceTime, thorttleTime, filter, take, takeUntil, concatMap, switchMap, mergeMap, map
+
+## Advanced Routing
+- Navigation Events
+- Lazy loading
+- Route Parameters: Path parameter, Query Parameter(Optional), Data injection
+- Route Guards: CanActivate, CanDeactivate, CanActivateChild, CanLoad, CanMatch
+- Resolver: retrieve data before the route is activated

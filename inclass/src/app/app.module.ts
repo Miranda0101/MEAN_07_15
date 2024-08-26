@@ -22,7 +22,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    UsersModule,
+    // UsersModule,
     ReactiveFormsModule
   ],
   providers: [],

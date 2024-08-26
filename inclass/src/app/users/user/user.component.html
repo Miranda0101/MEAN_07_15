@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <table *ngIf="usersList.length">
     <thead>
         <th>Username</th>
@@ -7,7 +8,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of usersList">
-            <td>{{ user.username }}</td>
+            <td (click)="goToProfile(user.id)">{{ user.username }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.phone }}</td>
             <td>{{ user.website }}</td>

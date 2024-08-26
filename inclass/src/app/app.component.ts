@@ -65,12 +65,12 @@ export class AppComponent implements OnInit, AfterViewInit {
         .subscribe((val) => console.log('button clicked:', val));
     }
     const obs2 = fromEvent(document,'click');
-    interval(1000)
-      .pipe(
-        // take(10)
-        takeUntil(obs2)
-      )
-      .subscribe((val) => console.log('taking until: ', val));
+    // interval(1000)
+    //   .pipe(
+    //     take(10)
+    //     // takeUntil(obs2)
+    //   )
+    //   .subscribe((val) => console.log('taking until: ', val));
 
     const input = document.querySelector('#userInput');
     if (input) {
