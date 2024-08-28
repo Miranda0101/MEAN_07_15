@@ -59,3 +59,7 @@
 - Controllers: handling HTTP requests and returning reponses to the client
 - Services: handle data operations and interact with database/external APIs
 - Modules: logical units that group related functionilities
+## Data Transfer Object(DTO): used to transfer data from client to server
+- Validators: Validation pipe
+- Whitelisting: handling unnecessary data from the request; forbidding non-whitelisted properties
+- Transformation: Instance transformation (DTO), Type Transformation from URL parameters

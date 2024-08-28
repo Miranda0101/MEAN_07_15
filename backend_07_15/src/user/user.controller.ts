@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { Controller, Get, HttpException, HttpStatus, Param, Query } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -23,5 +23,12 @@ export class UserController {
   getAllUsers(@Query('sortBy') sorting: string, @Query('filter') filter: string){
     console.log(`sort by ${sorting}, filtered with ${filter}`);
     return 'Get all users and sort';
+  }
+
+  // Request Body
+  @Post('login')
+  userLogin(@Body() body: any){
+    console.log(body);
+    // @Req @Res()
   }
 }

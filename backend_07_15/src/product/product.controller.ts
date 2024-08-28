@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Controller,
   Get,
@@ -6,6 +7,7 @@ import {
   Patch,
   Param,
   Delete,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -17,6 +19,12 @@ export class ProductController {
 
   @Post()
   create(@Body() createProductDto: CreateProductDto) {
+    const product = new CreateProductDto(); // instance of clas
+    const productObj = {
+      productName: 'Laptop',
+      quantity: 100,
+      tag: ['Office', 'Study'],
+    }; // plain object
     return this.productService.create(createProductDto);
   }
 
@@ -26,8 +34,9 @@ export class ProductController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.productService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    console.log(typeof id);
+    return this.productService.findOne(id);
   }
 
   @Patch(':id')
