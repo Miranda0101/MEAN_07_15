@@ -53,3 +53,9 @@
 - Route Parameters: Path parameter, Query Parameter(Optional), Data injection
 - Route Guards: CanActivate, CanDeactivate, CanActivateChild, CanLoad, CanMatch
 - Resolver: retrieve data before the route is activated
+
+
+# Backend: NestJS
+- Controllers: handling HTTP requests and returning reponses to the client
+- Services: handle data operations and interact with database/external APIs
+- Modules: logical units that group related functionilities
