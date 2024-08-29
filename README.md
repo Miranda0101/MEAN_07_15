@@ -63,3 +63,6 @@
 - Validators: Validation pipe
 - Whitelisting: handling unnecessary data from the request; forbidding non-whitelisted properties
 - Transformation: Instance transformation (DTO), Type Transformation from URL parameters
+## MongoDB
+- Collections, Documents, Schema
+- Mongoose library

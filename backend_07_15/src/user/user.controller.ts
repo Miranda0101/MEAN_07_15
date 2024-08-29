@@ -9,9 +9,12 @@ export class UserController {
   // http://localhost:3000/user/usernam-exists
   // Path Parameter
   @Get('username-exists/:user')
-  checkUsernameExists(@Param('user') username: string) {
-    const userExist = this.userService.userExists(username);
-    if (userExist) {
+  async checkUsernameExists(@Param('user') username: string) {
+    // const userExist = this.userService.userExists(username);
+    let user;
+    await this.userService.getUserByName(username).then((res)=>
+      user = res);
+    if (user) {
       throw new HttpException('Username already exists', HttpStatus.CONFLICT);
     } else {
       return 'Username is available';
@@ -20,9 +23,9 @@ export class UserController {
 
   // Query parameter
   @Get('all')
-  getAllUsers(@Query('sortBy') sorting: string, @Query('filter') filter: string){
+  async getAllUsers(@Query('sortBy') sorting: string, @Query('filter') filter: string){
     console.log(`sort by ${sorting}, filtered with ${filter}`);
-    return 'Get all users and sort';
+    return await this.userService.getAllUserInfo().then((data)=>console.log(data));
   }
 
   // Request Body
@@ -31,4 +34,11 @@ export class UserController {
     console.log(body);
     // @Req @Res()
   }
+
+  // create new user
+  @Post('new')
+  async userRegister(@Body() newUser: any){
+    return await this.userService.createNewUser(newUser);
+  }
+
 }
