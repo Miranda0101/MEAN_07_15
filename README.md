@@ -66,3 +66,25 @@
 ## MongoDB
 - Collections, Documents, Schema
 - Mongoose library
+## Authentication and Authorization
+- Authentication: verify the identity of a user
+- Authorization: determine whether a user has the permission to do sth
+## JSON Web Tokens(JWT)
+- represents the proof of authentication
+- **Encoding**: converting data from one to another format; reversible; one-to-one; transform object into a string format
+- **Encryption**: required a key; not always one-to-one; hard to reverse
+- Structure
+    - Header: contains algorithm and type of token
+    - Payload: contains the information we want to transmit
+    - Signature: gernerated by encode the header+payload+secretKey
+- Workflow:
+    - Login: the server authenticates the user and generates a JWT 
+    - Server sends the jwt to the client, and client stores it (cookies/localstorage)
+    - The browser sends an Http request along with the token in the header
+    - The serve recieve the token, verifies the singature and decodes the payload
+    - Grant access if token is valid and user has the access
+- A: Encoded header, B: Encoded payload, C: signature(S secretKey)
+    - server -> A.B.C -> client/localstorage 
+    - {role: 'user'} => {role:'admin'} (B -> B+)
+    - client -> A.B.C -> server -> A, B, C -> decode B -> new singature C+(A, B+, S) -> compare C+ with C -> valid if matched / Not valid
+- 
