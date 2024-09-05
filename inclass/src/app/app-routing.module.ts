@@ -6,12 +6,13 @@ import { UserComponent } from './users/user/user.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { PostComponent } from './users/post/post.component';
 import { CanVisitGuard } from './core/can-visit.guard';
+import { LoginComponent } from './login/login.component';
 
 // http://localhost:4200/
 const routes: Routes = [
   
   // default route of the application
-  {path: "", component: HomeComponent},
+  {path: "", component: LoginComponent},
   {path:'home', component: HomeComponent},
   {path:'product', component: ProductComponent,
     canActivate:[CanVisitGuard]

@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
+import { JwtAuthGuard } from 'src/auth/jwt-auth/jwt-auth.guard';
 
 @Controller('user')
 export class UserController {
@@ -22,6 +23,7 @@ export class UserController {
   }
 
   // Query parameter
+  @UseGuards(JwtAuthGuard)
   @Get('all')
   async getAllUsers(@Query('sortBy') sorting: string, @Query('filter') filter: string){
     console.log(`sort by ${sorting}, filtered with ${filter}`);

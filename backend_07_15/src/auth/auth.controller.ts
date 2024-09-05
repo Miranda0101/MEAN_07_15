@@ -8,7 +8,7 @@ export class AuthController {
   // Request Body
   @Post('login')
   userLogin(@Body() body: any) {
-    console.log(body);
+    // console.log(body);
     // @Req @Res()
     return this.authService.userLogin(body);
   }

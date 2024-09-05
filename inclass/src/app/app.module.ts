@@ -9,6 +9,9 @@ import { ProductComponent } from './product/product.component';
 import { LifecycleComponent } from './home/lifecycle/lifecycle.component';
 import { UsersModule } from './users/users.module';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './core/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,15 +20,19 @@ import { FeedbackComponent } from './feedback/feedback.component';
     ProductComponent,
     LifecycleComponent,
     FeedbackComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     // UsersModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

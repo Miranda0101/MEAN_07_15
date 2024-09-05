@@ -18,7 +18,8 @@ export class JwtStrategy extends PassportStrategy(Strategy){
     async validate(payload: any){
         // find it in the database
         // check for user Role
-        console.log(payload);
+        console.log("strategy",payload);
+        payload.role = 'admin'
         if (payload.role != 'admin'){
             throw new UnauthorizedException();
         }

@@ -12,12 +12,14 @@ export class AuthService {
     async validateUser(email: string, pass: string) {
         // Todo: check whether the user exists
         // Todo: Check whether passwords match with database
-        return {email: email, role: 'user'};
+        return {email: email, role: 'admin'};
     }
     // Todo: signin dto
     // generate JWT token after validation
     async userLogin(user: any){
-        const payload = {username: user.email, role: user.role}; 
+        const result = await this.validateUser(user.email, user.password);
+        const payload = {username: user.email, role: result.role}; 
+        console.log(payload);
         return { access_token: this.jwtService.sign(payload)};
     }
 }

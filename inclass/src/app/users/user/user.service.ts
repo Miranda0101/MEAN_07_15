@@ -7,7 +7,8 @@ import { User } from '../user.model';
   providedIn: 'root'
 })
 export class UserService {
-  api = 'https://jsonplaceholder.typicode.com/users';
+  // api = 'https://jsonplaceholder.typicode.com/users';
+  api = 'http://localhost:3000/user/all'
   constructor(private http: HttpClient) { }
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.api);

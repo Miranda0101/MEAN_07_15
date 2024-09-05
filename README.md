@@ -87,4 +87,4 @@
     - server -> A.B.C -> client/localstorage 
     - {role: 'user'} => {role:'admin'} (B -> B+)
     - client -> A.B.C -> server -> A, B, C -> decode B -> new singature C+(A, B+, S) -> compare C+ with C -> valid if matched / Not valid
-- 
+- Client side: Http Interceptor
