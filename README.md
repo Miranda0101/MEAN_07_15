@@ -88,3 +88,9 @@
     - {role: 'user'} => {role:'admin'} (B -> B+)
     - client -> A.B.C -> server -> A, B, C -> decode B -> new singature C+(A, B+, S) -> compare C+ with C -> valid if matched / Not valid
 - Client side: Http Interceptor
+- XSS: http-only cookie, Refresh token
+1. user logs in, server issue an access token(AT) and a refresh token(RT)
+2. For subsequent requests, if AT is available -> procceed normally
+3. If At expired, return error to the client
+4. Recieve the error, automatically send the Rt to the server
+5. IF RT available, server generates a new access token; otherwise, user has to log in again
