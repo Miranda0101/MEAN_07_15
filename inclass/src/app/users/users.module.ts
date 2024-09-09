@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PostComponent } from './post/post.component';
 import { UserService } from './user/user.service';
 import { FetchDataResolver } from './fetch-data.resolver';
+import { StoreModule } from '@ngrx/store';
 // import { routes } from './routes';
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     RouterModule.forChild(routes),
-    // RouterModule
+    // RouterModule'
+    // StoreModule.forFeature()
   ],
   providers: [UserService, FetchDataResolver],
 })

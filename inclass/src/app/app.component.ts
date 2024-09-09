@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import {
   BehaviorSubject,
   debounceTime,
@@ -15,6 +16,8 @@ import {
   throttle,
   throttleTime,
 } from 'rxjs';
+import { decrement, increment, reset } from './ngrx/action';
+import { selectCount } from './ngrx/selectors';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +33,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   });
   // numSub = new Subject<number>();
   numSub = new BehaviorSubject<number>(0);
-  constructor(private route: Router) {}
+  constructor(private route: Router, private store: Store) {}
   ngOnInit(): void {
     // First observer
     // this.numObs.subscribe(val => console.log("Observer 1: ", val));
@@ -80,5 +83,17 @@ export class AppComponent implements OnInit, AfterViewInit {
           console.log((<HTMLInputElement>event.target).value)
         );
     }
+  }
+
+  // ngrx
+  countObs = this.store.select(selectCount);
+  increment(){
+    this.store.dispatch(increment());
+  }
+  decrement(){
+    this.store.dispatch(decrement());
+  }
+  reset(){
+    this.store.dispatch(reset());
   }
 }

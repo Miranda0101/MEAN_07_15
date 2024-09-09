@@ -12,6 +12,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './core/auth.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrx/reducers';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { AuthInterceptor } from './core/auth.interceptor';
     // UsersModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({counter: counterReducer}),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

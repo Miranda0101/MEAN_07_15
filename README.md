@@ -54,6 +54,33 @@
 - Route Guards: CanActivate, CanDeactivate, CanActivateChild, CanLoad, CanMatch
 - Resolver: retrieve data before the route is activated
 
+## State Management
+- State: data / current values of the data at any given time
+- Redux Pattern: manage states by centralizing them
+    - State =>{User:{
+    Name:..., 
+    Education: {
+        ElementarySchool:..
+        MidddleSchool:..
+    }
+    }, 
+    Address:{
+        Country:..
+        State:..
+        Street: ..
+        ..
+    }...}
+    - Main components
+        - Store: store all the application state (database)
+        - Actions: triggered by user events (Event listeners)
+        - Reducers: take current state and action as inputs and return a new state (Pure functions -> same input, same output -> predictable)
+- NgRx follows the Redux pattern & core principals
+    - single source of truth
+    - state is read-only
+    - changes are made with pure fns
+    - Selectors: pure fn to get slices of store state
+    - Effects: handle actions, impure fns,
+- async pipe
 
 # Backend: NestJS
 - Controllers: handling HTTP requests and returning reponses to the client
