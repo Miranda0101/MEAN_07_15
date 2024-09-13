@@ -82,6 +82,20 @@
     - Effects: handle actions, impure fns,
 - async pipe
 
+## Advanced feature
+- ng-container: the tag will not be rendered as an actual DOM elements; CSS styles will not work; used to group HTML elements, or with structural directives
+- ng-template: the tag& the content inside will not be rendered at first; create a template with a reference name(#), use ngTemplateOutlet to bind & render it
+- Content projection: ng-content (used in child component) placeholder for exernal content in template; Single responsibility (SOLID principals)
+- Change Detection: Default(always check), OnPush(Check Once)
+    - Input Property changes
+    - An event from the component/its child components
+    - Async pipe
+    - Manually trigger the change detection cycle using ChangeDetectorRef
+- ViewEncapsulation: determines how the component's style will be applied to the template
+    - Emulated (Default): styles are scoped to the component
+    - ShadowDom: global styles will not affect the components' template
+    - None: styles will be global
+
 # Backend: NestJS
 - Controllers: handling HTTP requests and returning reponses to the client
 - Services: handle data operations and interact with database/external APIs

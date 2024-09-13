@@ -1,3 +1,8 @@
+<app-lifecycle [data]="parentData">
+    <p id="first">Message from parent template</p>
+    <p id="second">Another template</p>
+</app-lifecycle>
+
 <table *ngIf="products.length">
     <th>
         Product
@@ -10,4 +15,4 @@
         </tr>
     </tbody>
 </table>
-<app-lifecycle [data]="parentData"></app-lifecycle>
+

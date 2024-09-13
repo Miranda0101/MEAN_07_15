@@ -1,3 +1,13 @@
+<ng-template #name>
+    This is inside ngTemplate
+</ng-template>
+
+<ng-container >
+    <h1 class="container">Title in ngContainer</h1>
+</ng-container>
+<div [ngTemplateOutlet]="name"></div>
+<!-- <ng-template [ngIf]="condition"></ng-template> -->
+
 <button (click)="increment()">Add</button>
 <button (click)="decrement()">Minus</button>
 <button (click)="reset()">Reset</button>

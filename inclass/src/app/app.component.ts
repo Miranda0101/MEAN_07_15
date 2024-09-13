@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
@@ -23,6 +23,7 @@ import { selectCount } from './ngrx/selectors';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'inclass';
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   });
   // numSub = new Subject<number>();
   numSub = new BehaviorSubject<number>(0);
-  constructor(private route: Router, private store: Store) {}
+  constructor(private route: Router, private store: Store, private cdr: ChangeDetectorRef) {}
   ngOnInit(): void {
     // First observer
     // this.numObs.subscribe(val => console.log("Observer 1: ", val));
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   navigateProduct() {
     // do validation logic
     this.route.navigate(['product']);
+    this.cdr.detectChanges(); // Manaually trigger the change detection cycle
   }
   ngAfterViewInit(): void {
     const btn = document.querySelector<HTMLButtonElement>('#btn');
